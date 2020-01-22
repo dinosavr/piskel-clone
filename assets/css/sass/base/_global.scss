@@ -1,0 +1,17 @@
+html {
+  font-size: $font-size-html; /* font-size 1em = (62.5/100) * 16px = 10px*/
+}
+
+body{
+  font-size: $font-size;
+  font-family: $font-family;
+  box-sizing: border-box;
+  min-width: $mobileWrapper;
+}
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+.hidden{
+  display: none;
+}

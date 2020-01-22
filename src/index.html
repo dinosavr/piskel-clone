@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piskel-clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/icons/favicon.ico" type="image/x-icon" rel="icon" />
+
+</head>
+
+<body class="body" id="body">
+    <header class="header">
+        <div class="nav">
+            <a href="#home" class="logo">Piskel-clone</a>
+            <div id="menuLinks" class="menu-links">
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+            <div id="menuSettingLinks" class="menu-setting-links">
+                <a id="link-img" href="#">Img 1</a>
+                <a id="link-img2" href="#">Img 2</a>
+                <a id="link-img3" href="#">Img 3</a>
+            </div>
+            <a class="icon" id="btnMenu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a class="icon icon-setting" id="btnMenuSetting">
+                <i class="fa fa-ellipsis-v"></i>
+            </a>
+        </div>
+    </header>
+    <main class="main" id="main">
+        <div class="menu-tools">
+            <div id="menuSetTools" class="menu-set menu-set-tools">
+                <div id="currentSize" class="current-size"></div>
+                <div class="range-size-block"><input type="range" id="rangeSize" name="volume" min="1" max="4" step="1">
+                </div>
+                <ul class="menu-set__list menu-set-tools__list">
+                    <li id="toolFill" class="menu-set__list-item menu-set-tools__item-fill" title="Fill bucket (B)">Fill bucket</li>
+                    <li id="toolSomeColor" class="menu-set__list-item menu-set-tools__item-someColor" title="Change Same color (S)">Change Same color
+                    </li>
+                    <li id="toolDropper" class="menu-set__list-item menu-set-tools__item-choose-color" title="Choose color (C)">Choose color</li>
+                    <li id="toolPencil" class="menu-set__list-item menu-set-tools__item-pencil" title="Pencil (P)">Pencil</li>
+                    <li id="toolStroke" class="menu-set__list-item menu-set-tools__item-stroke" title="Stroke (K)">Stroke</li>
+                    <li id="toolEraser"
+                        class="menu-set__list-item menu-set-tools__item-eraser menu-set__list-separator" title="Eraser (E)">Eraser</li>
+                    <li id="toolClear" class="menu-set__list-item menu-set-tools__item-clear" title="Eraser (R)">Clear</li>
+                </ul>
+            </div>
+            <div class="menu-set menu-set-colors">
+                <ul class="menu-set__list  menu-set-colors__list">
+                    <li id="currentColor" class="menu-set__list-item menu-set-colors__item-current-color">
+                        <div id="showCurrentColor" class="before"></div><input id="currentColorSelector"
+                            class="menu-set-colors__current-color-selector" type="color" value="#ff0000">Current color
+                    </li>
+                    <li id="prevColor"
+                        class="menu-set__list-item menu-set-colors__item-prev-color menu-set__list-separator">
+                        <div id="showPrevColor" class="before"></div>Prev color
+                    </li>
+                    <li id="colorRed" class="menu-set__list-item menu-set-colors__item-red">
+                        <div id="showRedColor" class="before"></div>red
+                    </li>
+                    <li id="colorBlue" class="menu-set__list-item menu-set-colors__item-blue">
+                        <div id="showBlueColor" class="before"></div>blue
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="menuSupport" class="menu-support">
+            <div class="menu-set">
+                <ul class="menu-set__list">
+                    <li class="menu-set__list-item"><a id="field32x32" class="menu-set__list-link" href="#">32x32</a>
+                    </li>
+                    <li class="menu-set__list-item"><a id="field64x64" class="menu-set__list-link" href="#">64x64</a>
+                    </li>
+                    <li class="menu-set__list-item"><a id="field128x128" class="menu-set__list-link"
+                            href="#">128x128</a></li>
+                </ul>
+            </div>
+            <div id="frames" class="frames">                
+                <div id="blockBtnAdd"></div>
+                <ul id="framesList" class="framesList">                    
+                    <li class="column" draggable="true">
+                        <header><canvas id="frame" class="frames">Upgrade your browser</canvas></header>
+                    </li>                         
+                </ul>
+            </div>
+        </div>
+        <canvas id="canvas" class="canvas">Upgrade your browser</canvas>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

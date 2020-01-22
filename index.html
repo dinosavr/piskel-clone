@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Codejam Canvas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="body" id="body">
+    <header class="header">
+        <div class="nav">
+            <a href="#home" class="logo">CodeJam - Pallete</a>
+            <div id="menuLinks" class="menu-links">
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+            <div id="menuSettingLinks" class="menu-setting-links">
+                <a id="link-img" href="#">Img 1</a>
+                <a id="link-img2" href="#">Img 2</a>
+                <a id="link-img3" href="#">Img 3</a>
+            </div>
+            <a class="icon" id="btnMenu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a class="icon icon-setting" id="btnMenuSetting">
+                <i class="fa fa-ellipsis-v"></i>
+            </a>
+        </div>
+    </header>
+    <main class="main" id="main">
+        <div class="menu-tools">
+            <div id="menuSetTools" class="menu-set menu-set-tools">
+                <ul class="menu-set__list menu-set-tools__list">
+                    <li id="toolFill" class="menu-set__list-item menu-set-tools__item-fill">Fill bucket</li>
+                    <li id="toolDropper" class="menu-set__list-item menu-set-tools__item-choose-color">Choose color</li>
+                    <li id="toolPencil" class="menu-set__list-item menu-set-tools__item-pencil menu-set__list-separator">Pencil</li>
+                    <li id="toolMove" class="menu-set__list-item menu-set-tools__item-move">Move</li>
+                    <li id="toolTransform" class="menu-set__list-item menu-set-tools__item-transform">Transform</li>
+                    <li id="toolClear" class="menu-set__list-item menu-set-tools__item-clear">Clear</li>
+                </ul>
+            </div>
+            <div class="menu-set menu-set-colors">
+                <ul class="menu-set__list  menu-set-colors__list">
+                    <li id="currentColor" class="menu-set__list-item menu-set-colors__item-current-color">
+                        <div id="showCurrentColor" class="before"></div><input id="currentColorSelector" class="menu-set-colors__current-color-selector" type="color" value="#ff0000">Current color
+                    </li>
+                    <li id="prevColor"
+                        class="menu-set__list-item menu-set-colors__item-prev-color menu-set__list-separator">
+                        <div id="showPrevColor" class="before"></div>Prev color
+                    </li>
+                    <li id="colorRed" class="menu-set__list-item menu-set-colors__item-red">
+                        <div id="showRedColor" class="before"></div>red
+                    </li>
+                    <li id="colorBlue" class="menu-set__list-item menu-set-colors__item-blue">
+                        <div id="showBlueColor" class="before"></div>blue
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="menuSupport" class="menu-support">
+            <div class="menu-set">
+                <ul class="menu-set__list">
+                    <li class="menu-set__list-item"><a id="field4x4" class="menu-set__list-link" href="#">4x4</a></li>
+                    <li class="menu-set__list-item"><a id="field16x16" class="menu-set__list-link" href="#">16x16</a></li>
+                    <li class="menu-set__list-item"><a id="field32x32" class="menu-set__list-link" href="#">32x32</a></li>
+                    <li class="menu-set__list-item"><a id="field64x64" class="menu-set__list-link" href="#">64x64</a></li>
+                    <li class="menu-set__list-item"><a id="field128x128" class="menu-set__list-link" href="#">128x128</a></li>
+                    <li class="menu-set__list-item"><a id="toolGrayscale" class="menu-set__list-link" href="#">Grayscale</a></li>                    
+                </ul>
+            </div>
+        </div>
+        <div id="searchTownBlock" class="search-town-block"><button id="loadTownBtn">Load</button><input type="text" id="nameTown" name="nameTown" placeholder="name of Town"><span id="townError" class="message-search-town error"></span></div>        
+        <canvas id="canvas" class="canvas">Upgrade your browser</canvas>
+        <div id="currentSize" class="current-size"></div>        
+        <div class="range-size-block"><input type="range" id="rangeSize" name="volume" min="1" max="4" step="1"></div>        
+    </main>
+    <footer></footer>
+</body>
+
+<script src="assets/js/js.js"></script>
+
+</html>

@@ -1,0 +1,6 @@
+/* @import 'sass/abstracts/variables';
+@import 'sass/base/normalize';
+@import 'sass/base/global';
+@import 'sass/layout/header';
+@import 'sass/layout/main';
+@import 'sass/layout/footer'; */
