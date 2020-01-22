@@ -31,3 +31,6 @@ export const btnAddFrameEl = document.getElementById('btnAddFrame');
 
 export const dataURL = localStorage.getItem('canvasSave');
 export const cursorSizeDefault = 1;
+export const sizeCanvasElDefault = 'field64x64';
+export const sizeCanvasDefault = 64;
+export const currentActionDefault = 'toolPencil';

@@ -1,5 +1,5 @@
-import {toolPencilEl, showCurrentColorEl, currentColorSelectorEl, showPrevColorEl, currentSizeEl, rangeSizeEl, cursorSizeDefault, field64x64El} from './constants';
-import {mainCanvas, loadCanvasImage, loadCanvasImageToFrame, changeSizeBgCanvas} from './canvas';
+import {toolPencilEl, showCurrentColorEl, currentColorSelectorEl, showPrevColorEl, currentSizeEl, rangeSizeEl, cursorSizeDefault, sizeCanvasDefault, sizeCanvasElDefault, currentActionDefault} from './constants';
+import {mainCanvas, loadCanvasImage, loadCanvasImageToFrame, changeSizeBgCanvas, createCanvasArea} from './canvas';
 import {cursorSizeToDiv, activeToolsMenu, activeSizeMenu, createListFrames} from './view';
 import { initListeners, initListenersKeyBoard } from './listeners';
 import initDragDrop from './dragDropList';
@@ -23,6 +23,8 @@ function initColors(){
 }
 
 function initCurrentAction(){
+
+    if(!localStorage.getItem('currentAction')) localStorage.setItem('currentAction', currentActionDefault);
     const currentAction = localStorage.getItem('currentAction');
     
     if (currentAction !== null) {
@@ -30,19 +32,24 @@ function initCurrentAction(){
         const pathToCursorFolder = 'icons/';
         const cursorBgImagePosition = '0 32, auto';
         mainCanvas.style.cursor = `url("${pathToCursorFolder}cursor-${currentAction}.png") ${cursorBgImagePosition}`;
-    } else toolPencilEl.click();    
+    } else {        
+    toolPencilEl.click();    
+    }
 
 }
 
 function initCurrentSizeCanvas(){
     const currentSizeCanvas = localStorage.getItem('currentSizeCanvas');
 
-    if (currentSizeCanvas !== null) {
-        document.getElementById(currentSizeCanvas).classList.add('active');        
-    } else field64x64El.click();
+    if (!currentSizeCanvas) {
+        createCanvasArea(sizeCanvasDefault); 
+        localStorage.setItem('currentSizeCanvas', sizeCanvasElDefault);
+        document.getElementById(sizeCanvasElDefault).classList.add('active');               
+    } else document.getElementById(currentSizeCanvas).classList.add('active');
 }
 
 function initCurrentCursor(){
+    if(localStorage.getItem('cursorSize')) localStorage.setItem('cursorSize', cursorSizeDefault);
     const cursorSize = localStorage.getItem('cursorSize') || cursorSizeDefault;
 
     currentSizeEl.innerHTML = `${cursorSizeToDiv(cursorSize)}`;
